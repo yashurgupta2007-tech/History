@@ -1,0 +1,786 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f1e5;
+    color: #222;
+}
+
+h1,h2,h3 {
+    font-family: 'Cinzel', serif;
+}
+
+:root {
+    --saffron: #e76f00;
+    --dark-brown: #4a2c2a;
+    --cream: #f8f1ef;
+    --gold: #d4a017;
+    --navy: #1c2b39;
+}
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(90deg, #ffcc00,#ff7b00,#ff4500);
+    z-index: 99998;
+    transition: width .1s linear;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #e76f00;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: 0.3s;
+    z-index: 9999;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    background: #ff8c00;
+    transform: translateY(-5px);
+}
+
+.navbar {
+    width: 100%;
+    padding: 18px 8%;
+    background-color: rgba(28,43,57,0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h2 {
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #1c2b39;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .logo h2 {
+        font-size: 1.1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.3rem!important;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 0.8rem;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+
+    .fort-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 60px 20px;
+        gap: 20px;
+    }
+
+    .stat-card h2 {
+        font-size: 2rem;
+    }
+
+    .stat-card {
+        padding: 25px 15px;
+    }
+
+    .forts-intro h2 {
+        font-size: 1.8rem;
+    }
+    
+    .fort-map-preview {
+        padding: 60px 6%;
+    }
+
+    .map-preview-content h2 {
+        font-size: 1.6rem!important;
+    }
+
+    .preview-map {
+        max-width: 280px;
+    }
+
+    .map-hero {
+        padding: 60px 6% 30px;
+    }
+
+    .map-hero h1 {
+        font-size: 2rem;
+    }
+
+    .map-layout {
+        grid-template-columns: 1fr!important;
+    }
+
+    .info-panel {
+        margin-top:20px;
+    }
+
+    .maharashtra-map {
+        max-width: 320px;
+    }
+
+    .marker {
+        width: 8px!important;
+        height: 8px!important;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+    
+}
+
+.forts-hero {
+    min-height: 70vh;
+    background-image: linear-gradient(rgba(28,43,57,0.65),rgba(231,111,0,0.55)),url("https://extranet.traveldhamaka.com/assets/sightseeing/Raigad%20Fort.JPG");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    max-width: 700px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.forts-intro {
+    padding: 90px 10%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.forts-intro h2 {
+    color: var(--saffron);
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.forts-intro p {
+    max-width: 900px;
+    margin: auto;
+    line-height: 2;
+    color: #555;
+}
+
+.fort-types {
+    padding: 90px 8%;
+    background-color: var(--cream);
+    text-align: center;
+}
+
+
+
+.types-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.type-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.60);
+    transition: 0.3s;
+}
+
+.type-card:hover {
+    transform: translateY(-10px);
+}
+
+.type-card h3 {
+    color: var(--saffron);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+.fort-types h2 {
+    color: var(--saffron);
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.featured-forts {
+    padding: 90px 8%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.featured-forts .section-title h2{
+    font-size: 2rem;
+    color: var(--saffron);
+    margin-bottom: 10px;
+}
+
+.fort-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
+}
+
+.fort-card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.fort-card:hover {
+    transform: translateY(-12px);
+}
+
+.fort-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.fort-info {
+    padding: 25px;
+}
+
+.fort-info h3 {
+    color: var(--saffron);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.fort-info p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.fort-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--navy);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.fort-btn:hover {
+    background-color: var(--saffron);
+}
+
+.footer {
+    background-color: var(--navy);
+    color: white;
+    padding-top: 60px;
+}
+
+.footer-content {
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.footer-section p, .footer-section li {
+    color: #ddd;
+    line-height: 1.8;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.fort-stats {
+    padding: 90px 8%;
+    background-color: var(--dark-brown);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255,255,255,0.18)
+}
+
+.stat-card h2 {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.stat-card p {
+    font-size: 1.1rem;
+}
+
+.fort-map-preview {
+    background-color: #f8f1e5;
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.map-preview-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.map-preview-content h2 {
+    font-size: 2.8rem;
+    color: var(--dark-brown);
+    margin-bottom: 15px;
+}
+
+.map-preview-content p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.preview-map {
+    width: 100%;
+    max-width: 450px;
+    display: block;
+    margin: 0 auto 40px;
+}
+
+.map-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--saffron);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.map-btn:hover {
+    background: #c85d00;
+    transform: translateY(-4px);
+}
+
+.map-hero {
+    padding: 80px 8% 40px;
+    text-align: center;
+    background-color: #f8f1e5;
+}
+
+.map-hero h1 {
+    font-size: 3rem;
+    color: var(--dark-brown);
+    margin-bottom: 15px;
+}
+
+.map-hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #666;
+    line-height: 1.6;
+}
+
+.interactive-map {
+    padding: 80px 8%;
+    background-color: #fffaf3;
+}
+
+.map-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.map-area {
+    display: flex;
+    justify-content: center;
+}
+
+.maharashtra-map {
+    width: 100%;
+    max-width: 600px;
+}
+
+.info-panel {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.info-panel.fade {
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.info-image {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px
+}
+
+.info-panel h2 {
+    color: var(--saffron);
+    margin-bottom: 15px;
+}
+
+.info-panel p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.marker {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--saffron);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(231,111,0,0.7);
+    transition: 0.3s;
+}
+
+.marker.active {
+    background-color: var(--gold);
+    transform: scale(1.6);
+    box-shadow: 0 0 20px rgba(79, 69, 10, 0.84);
+    animation: pulse 2s infinite;
+}
+
+.marker:hover {
+    transform: scale(1.4);
+}
+
+.marker::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1c2b39;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s;
+}
+
+.marker:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.raigad {
+    top: 57%;
+    left: 8%;
+}
+
+.shivneri {
+    top:40%;
+    left:10%;
+}
+
+.rajgad {
+    top:53%;
+    left:17%;
+}
+
+.sinhagad {
+    top: 58%;
+    left: 15%;
+}
+
+.pratapgad {
+    top: 61%;
+    left: 10%;
+}
+
+.sindhudurg {
+    top: 85%;
+    left: 8%;
+}
+
+.panhala {
+    top: 78%;
+    left: 17%;
+}
+
+.torna {
+    top: 62%;
+    left: 17%;
+}
+
+.daulatabad {
+    top: 32%;
+    left: 30%;
+}
+
+.murud_janjira {
+    top: 62%;
+    left: 5%;
+}
+
+.lohagad {
+    top: 46%;
+    left: 12%;
+}
+
+.visapur {
+    top: 50%;
+    left: 12%;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        box-shadow: 0 0 8px rgba(231,111,0,0.5);
+    }
+
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(231,111,0,0.9);
+    }
+
+    100% {
+        transform: scale(0.5);
+        box-shadow: 0 0 8px rgba(231,111,0,0.5);
+    }
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 14px 5%;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+    }
+
+    .explore-btn {
+        padding: 10px 22px;
+        font-size: 0.95rem;
+    }
+
+    .intro {
+        padding: 45px 6%;
+    }
+
+    .intro h2 {
+        font-size: 1.5rem;
+    }
+
+    .intro p {
+        font-size: 0.95rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+
+    .timeline-cards,
+    .fort-cards,
+    .culture-grid,
+    .heritage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-card,
+    .fort-card,
+    .culture-card,
+    .heritage-card {
+        padding: 25px 20px;
+    }
+
+    .timeline-btn,
+    .fort-btn,
+    .culture-btn,
+    .heritage-btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    #backToTop {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+        bottom: 16px;
+        right: 16px;
+    }
+}
+
+
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .logo h2 {
+        font-size: 0.95rem;
+    }
+}
+
+
+@media (max-width: 900px) and (orientation: landscape) {
+    .hero,
+    #loader {
+        min-height: 100vh;
+    }
+}

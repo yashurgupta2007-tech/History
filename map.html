@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maharashtra Map | Maharashtra's Heritage</title>
+    <link rel="stylesheet" href="forts.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"></head>
+
+<body>
+
+<button id="backToTop" title="Back To Top">↑</button></body>
+    <div id="progress-bar"></div>
+    <nav class="navbar">
+        <div class="logo">
+            <h2>Maharashtra's Heritage</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="timeline.html">Timelines</a></li>
+            <li><a href="forts.html">Forts</a></li>
+            <li><a href="culture.html">Culture</a></li>
+            <li><a href="heritage-sites.html">Heritage-Sites</a></li>
+        </ul>
+        <div class="menu-btn">
+            &#9776;
+        </div>
+    </nav>
+
+    <section class="map-hero">
+        <h1>Interactive Fort Map</h1>
+        <p>Click on a fort marker to explore its history, architecture and significance.</p>
+    </section>
+
+    <section class="interactive-map">
+        <div class="map-layout">
+            <div class="map-area">
+                <div class="map-container">
+                    <img src="Maharashtra-map.svg" alt="Maharashtra Map" class="maharashtra-map">
+                    <button class="marker raigad" id="marker" data-fort="raigad" data-name="Raigad Fort"></button>
+                    <button class="marker shivneri" id="marker" data-fort="shivneri" data-name="Shivneri Fort"></button>
+                    <button class="marker sinhagad" id="marker" data-fort="sinhagad" data-name="Sinhagad Fort"></button>
+                    <button class="marker rajgad" id="marker" data-fort="rajgad" data-name="Rajgad Fort"></button>
+                    <button class="marker pratapgad" id="marker" data-fort="pratapgad" data-name="Pratapgad Fort"></button>
+                    <button class="marker sindhudurg" id="marker" data-fort="sindhudurg" data-name="Sindhudurg Fort"></button>
+                    <button class="marker panhala" id="marker" data-fort="panhala" data-name="Panhala Fort"></button>
+                    <button class="marker torna" id="marker" data-fort="torna" data-name="Torna Fort"></button>
+                    <button class="marker daulatabad" id="marker" data-fort="daulatabad" data-name="Daulatabad Fort"></button>
+                    <button class="marker murud_janjira" id="marker" data-fort="murud_janjira" data-name="Murud Janjira Fort"></button>
+                    <button class="marker lohagad" id="marker" data-fort="lohagad" data-name="Lohagad Fort"></button>
+                    <button class="marker visapur" id="marker" data-fort="visapur"data-name="Visapur Fort"></button>
+                </div>
+            </div>
+            <div class="info-panel">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYVfN0KKOwQfaY-zK0DH7QzGcWXygkfJT1BvR7r2ywoltY_pM9yvd0sf4&s=10" alt="Raigad Fort" id="fort-image" class="info-image">
+                <h2 id="fort-name">Welcome Explorer!</h2>
+                <p id="fort-description">Click on any fort marker on the map and discover its history, architecture and importance in Maharashtra's glorious past.</p>
+                <a href="#" id="fort-link" class="map-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+    <button id="backToTop" title="Back To Top">↑</button>
+    <script src="script.js"></script><script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration:800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+
+</html>
